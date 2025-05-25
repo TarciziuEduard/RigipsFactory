@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Rigips factory - Process flow system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏭 Rigips factory</h1>
+            <p>Process flow modeling system - Producție plăci rigips</p>
+        </div>
+        <div class="status-bar">
+            <span id="status">Pregătit pentru configurare</span> | 
+            <span id="nodeCount">Noduri: 0</span> | 
+            <span id="connectionCount">Conexiuni: 0</span>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h3>📋 Materii Prime</h3>
+                <div class="node-palette">
+                    <button class="node-button raw-material" data-node-type="IpsosSourceNode">⬜Sursă ipsos</button>
+                    <button class="node-button raw-material" data-node-type="WaterSourceNode">💧 Sursă apă</button>
+                    <button class="node-button raw-material" data-node-type="AdditiveSourceNode">🧪 Sursă aditivi</button>
+                </div>
+
+                <h3>⚙️ Procesare</h3>
+                <div class="node-palette">
+                    <button class="node-button processing" data-node-type="MixingNode">🔄 Amestecare</button>
+                    <button class="node-button processing" data-node-type="FormingNode">📋 Formare plăci</button>
+                    <button class="node-button processing" data-node-type="DryingNode">🔥 Uscare</button>
+                </div>
+
+                <h3>🧮 Calcule</h3>
+                <div class="node-palette">
+                    <button class="node-button calculation" data-node-type="CostCalculationNode">💰 Calcul cost</button>
+                    <button class="node-button calculation" data-node-type="ProfitCalculationNode">📈 Calcul profit</button>
+                    <button class="node-button calculation" data-node-type="EfficiencyNode">⚡ Eficiență</button>
+                </div>
+
+                <h3>📊 Afișare</h3>
+                <div class="node-palette">
+                    <button class="node-button output" data-node-type="LogNode">📝 Log</button>
+                    <button class="node-button output" data-node-type="DisplayNode">📺 Display</button>
+                </div>
+
+                <div class="controls">
+                    <button class="run-button" id="runBtn">▶️ Rulează procesul</button>
+                    <button class="clear-button" id="clearBtn">🗑️ Șterge tot</button>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <div class="canvas" id="canvas">
+                    <div class="canvas-info-box" id="canvasInfoBox">
+                        <strong>💡 Cum să conectezi:</strong><br>
+                        1. Click pe un port albastru (ieșire)<br>
+                        2. Click pe un port verde (intrare)<br>
+                        3. Conexiunea se face automat!<br><br>
+                        <strong>🖱️ Alte comenzi:</strong><br>
+                        • Setați zoom-ul browserului pentru o vizualizare mai bună<br>
+                        • Dublu-click pe nod = șterge<br>
+                        • Drag & drop = mută noduri<br>
+                    </div>
+                </div>
+
+                <div class="logs" id="logs">
+                    <h4>📋 Jurnal Execuție</h4>
+                    <div id="logContent">
+                        <div class="log-entry log-info">Sistem pornit. Adaugă noduri pentru a începe...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
